@@ -1,4 +1,7 @@
 # Redis
+
+[![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml) [![redis, 6.2 bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/bullseye.yml)
+
 Redis is an open source key-value store that functions as a data structure server.
 
 ## Quick reference
