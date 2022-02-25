@@ -9,8 +9,8 @@
 | 6.0-alpine | [![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml) |
 | 6.2-bullseye | [![redis, 6.2-bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/bullseye.yml) |
 | 6.2-alpine | [![redis, 6.2-bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/bullseye.yml) |
-| 6.2-bullseye | [![redis, 7.0-rc-bullseye](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml) |
-| 6.2-alpine | [![redis, 7.0-rc-alpine](https://github.com/buluma/redis/actions/workflows/7.0-alpine.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/7.0-alpine.yml) |
+| 7.0-rc-bullseye | [![redis, 7.0-rc-bullseye](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml) |
+| 7.0-rc-alpine | [![redis, 7.0-rc-alpine](https://github.com/buluma/redis/actions/workflows/7.0-alpine.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/7.0-alpine.yml) |
 
 # Quick reference
 
