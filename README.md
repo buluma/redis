@@ -1,6 +1,6 @@
 # Redis
 
-[![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml) [![redis, 6.2 bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/bullseye.yml)
+[![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml) [![redis, 6.2 bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/bullseye.yml) [![redis, 7.0-rc-bullseye](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/7.0-bullseye.yml)
 
 # Quick reference
 
