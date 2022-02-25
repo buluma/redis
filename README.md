@@ -1,7 +1,8 @@
 # Redis
 
-|Version|Build Status|
+| Version | Build Status|
 |-------|------------|
+| 5.0 | [![redis, 5.0-bullseye](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml) |
 
 
 
