@@ -8,14 +8,14 @@ on:
       - '6.0/**'
       - '.github/workflows/6.0-bullseye.yml'
   schedule:
-    - cron: '47 *,* * * *'
+    - cron: '22 10 * * *'
   workflow_dispatch:
 
 jobs:
   # Test the image builds and works correctly.
   test:
-    name: Test Busybox 1.34.1-musl
-    # runs-on: ubuntu-latest
+    name: Test
+    if: github.ref == 'refs/heads/testing'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -34,7 +34,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    needs: test
+    # needs: test
     if: github.ref == 'refs/heads/main'
 
     steps:
