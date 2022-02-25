@@ -57,4 +57,4 @@ jobs:
 
           push: true
           tags: |
-            ${{ github.repository }}:5.0.14, ${{ github.repository }}:5.0, 5, ${{ github.repository }}:5.0.14-bullseye, ${{ github.repository }}:5.0-bullseye, ${{ github.repository }}:5-bullseye
+            ${{ github.repository }}:5.0.14, ${{ github.repository }}:5.0, ${{ github.repository }}:5.0.14-bullseye, ${{ github.repository }}:5.0-bullseye, ${{ github.repository }}:5-bullseye
