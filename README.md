@@ -2,46 +2,30 @@
 
 [![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml) [![redis, 6.2 bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg?branch=main)](https://github.com/buluma/redis/actions/workflows/bullseye.yml)
 
-<!--
-
-********************************************************************************
-
-WARNING:
-
-    DO NOT EDIT "redis/README.md"
-
-    IT IS AUTO-GENERATED
-
-    (from the other files in "redis/" combined with a set of templates)
-
-********************************************************************************
-
--->
-
 # Quick reference
 
 -   **Maintained by**:  
-    [the Docker Community](https://github.com/docker-library/redis)
+    [Michael Buluma](https://github.com/buluma/redis)
 
 -   **Where to get help**:  
     [the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
 
 # Supported tags and respective `Dockerfile` links
 
--   [`7.0-rc1`, `7.0-rc`, `7.0-rc1-bullseye`, `7.0-rc-bullseye`](https://github.com/docker-library/redis/blob/b90f94b39a5abe413737f797b92ee257ca8303b2/7.0-rc/Dockerfile)
--   [`7.0-rc1-alpine`, `7.0-rc-alpine`, `7.0-rc1-alpine3.15`, `7.0-rc-alpine3.15`](https://github.com/docker-library/redis/blob/b90f94b39a5abe413737f797b92ee257ca8303b2/7.0-rc/alpine/Dockerfile)
--   [`6.2.6`, `6.2`, `6`, `latest`, `6.2.6-bullseye`, `6.2-bullseye`, `6-bullseye`, `bullseye`](https://github.com/docker-library/redis/blob/a04a6df0a45894e1a630db4e84e0c12c7bcf326a/6.2/Dockerfile)
--   [`6.2.6-alpine`, `6.2-alpine`, `6-alpine`, `alpine`, `6.2.6-alpine3.15`, `6.2-alpine3.15`, `6-alpine3.15`, `alpine3.15`](https://github.com/docker-library/redis/blob/84c36a0967bcfa8a9c39cb899464785c5f2cf5ef/6.2/alpine/Dockerfile)
+-   [`7.0-rc1`, `7.0-rc`, `7.0-rc1-bullseye`, `7.0-rc-bullseye`](https://github.com/buluma/redis/blob/main/7.0-rc/Dockerfile)
+-   [`7.0-rc1-alpine`, `7.0-rc-alpine`, `7.0-rc1-alpine3.15`, `7.0-rc-alpine3.15`](https://github.com/buluma/redis/blob/main/7.0-rc/alpine/Dockerfile)
+-   [`6.2.6`, `6.2`, `6`, `latest`, `6.2.6-bullseye`, `6.2-bullseye`, `6-bullseye`, `bullseye`](https://github.com/buluma/redis/blob/main/6.2/Dockerfile)
+-   [`6.2.6-alpine`, `6.2-alpine`, `6-alpine`, `alpine`, `6.2.6-alpine3.15`, `6.2-alpine3.15`, `6-alpine3.15`, `alpine3.15`](https://github.com/buluma/redis/blob/main/6.2/alpine/Dockerfile)
 -   [`6.0.16`, `6.0`, `6.0.16-bullseye`, `6.0-bullseye`](https://github.com/docker-library/redis/blob/a04a6df0a45894e1a630db4e84e0c12c7bcf326a/6.0/Dockerfile)
--   [`6.0.16-alpine`, `6.0-alpine`, `6.0.16-alpine3.15`, `6.0-alpine3.15`](https://github.com/docker-library/redis/blob/84c36a0967bcfa8a9c39cb899464785c5f2cf5ef/6.0/alpine/Dockerfile)
--   [`5.0.14`, `5.0`, `5`, `5.0.14-bullseye`, `5.0-bullseye`, `5-bullseye`](https://github.com/docker-library/redis/blob/a04a6df0a45894e1a630db4e84e0c12c7bcf326a/5/Dockerfile)
--   [`5.0.14-32bit`, `5.0-32bit`, `5-32bit`, `5.0.14-32bit-bullseye`, `5.0-32bit-bullseye`, `5-32bit-bullseye`](https://github.com/docker-library/redis/blob/a04a6df0a45894e1a630db4e84e0c12c7bcf326a/5/32bit/Dockerfile)
--   [`5.0.14-alpine`, `5.0-alpine`, `5-alpine`, `5.0.14-alpine3.15`, `5.0-alpine3.15`, `5-alpine3.15`](https://github.com/docker-library/redis/blob/84c36a0967bcfa8a9c39cb899464785c5f2cf5ef/5/alpine/Dockerfile)
+-   [`6.0.16-alpine`, `6.0-alpine`, `6.0.16-alpine3.15`, `6.0-alpine3.15`](https://github.com/buluma/redis/blob/main/6.0/alpine/Dockerfile)
+-   [`5.0.14`, `5.0`, `5`, `5.0.14-bullseye`, `5.0-bullseye`, `5-bullseye`](https://github.com/buluma/redis/blob/main/5.0/Dockerfile)
+-   [`5.0.14-32bit`, `5.0-32bit`, `5-32bit`, `5.0.14-32bit-bullseye`, `5.0-32bit-bullseye`, `5-32bit-bullseye`](https://github.com/buluma/redis/blob/main/5/32bit/Dockerfile)
+-   [`5.0.14-alpine`, `5.0-alpine`, `5-alpine`, `5.0.14-alpine3.15`, `5.0-alpine3.15`, `5-alpine3.15`](https://github.com/buluma/redis/blob/main/5/alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -   **Where to file issues**:  
-    [https://github.com/docker-library/redis/issues](https://github.com/docker-library/redis/issues)
+    [https://github.com/docker-library/redis/issues](https://github.com/buluma/redis/issues)
 
 -   **Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
     [`amd64`](https://hub.docker.com/r/amd64/redis/), [`arm32v5`](https://hub.docker.com/r/arm32v5/redis/), [`arm32v6`](https://hub.docker.com/r/arm32v6/redis/), [`arm32v7`](https://hub.docker.com/r/arm32v7/redis/), [`arm64v8`](https://hub.docker.com/r/arm64v8/redis/), [`i386`](https://hub.docker.com/r/i386/redis/), [`mips64le`](https://hub.docker.com/r/mips64le/redis/), [`ppc64le`](https://hub.docker.com/r/ppc64le/redis/), [`s390x`](https://hub.docker.com/r/s390x/redis/)
@@ -78,13 +62,13 @@ For the ease of accessing Redis from other containers via Docker networking, the
 ## start a redis instance
 
 ```console
-$ docker run --name some-redis -d redis
+$ docker run --name some-redis -d buluma/redis
 ```
 
 ## start with persistent storage
 
 ```console
-$ docker run --name some-redis -d redis redis-server --save 60 1 --loglevel warning
+$ docker run --name some-redis -d buluma/redis redis-server --save 60 1 --loglevel warning
 ```
 
 There are several different persistence strategies to choose from. This one will save a snapshot of the DB every 60 seconds if at least 1 write operation was performed (it will also lead to more logs, so the `loglevel` option may be desirable). If persistence is enabled, data is stored in the `VOLUME /data`, which can be used with `--volumes-from some-volume-container` or `-v /docker/host/dir:/data` (see [docs.docker volumes](https://docs.docker.com/engine/tutorials/dockervolumes/)).
@@ -94,7 +78,7 @@ For more about Redis Persistence, see [http://redis.io/topics/persistence](http:
 ## connecting via `redis-cli`
 
 ```console
-$ docker run -it --network some-network --rm redis redis-cli -h some-redis
+$ docker run -it --network some-network --rm buluma/redis redis-cli -h some-redis
 ```
 
 ## Additionally, If you want to use your own redis.conf ...
@@ -102,7 +86,7 @@ $ docker run -it --network some-network --rm redis redis-cli -h some-redis
 You can create your own Dockerfile that adds a redis.conf from the context into /data/, like so.
 
 ```dockerfile
-FROM redis
+FROM buluma/redis
 COPY redis.conf /usr/local/etc/redis/redis.conf
 CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 ```
@@ -110,7 +94,7 @@ CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
 Alternatively, you can specify something along the same lines with `docker run` options.
 
 ```console
-$ docker run -v /myredis/conf:/usr/local/etc/redis --name myredis redis redis-server /usr/local/etc/redis/redis.conf
+$ docker run -v /myredis/conf:/usr/local/etc/redis --name myredis buluma/redis redis-server /usr/local/etc/redis/redis.conf
 ```
 
 Where `/myredis/conf/` is a local directory containing your `redis.conf` file. Using this method means that there is no need for you to have a Dockerfile for your redis container.
