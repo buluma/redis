@@ -1,5 +1,5 @@
 ---
-name: redis, 5.0-alpine
+name: build-push, 5.0-alpine
 
 on:
   pull_request:
@@ -15,8 +15,8 @@ jobs:
   # Test the image builds and works correctly.
   test:
     name: Test
-    # runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
+    if: github.ref == 'refs/heads/testing'
     strategy:
       matrix:
         os: [ubuntu-latest]

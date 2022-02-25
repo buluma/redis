@@ -1,5 +1,5 @@
 ---
-name: redis, 6.2-bullseye
+name: build-push, 6.2-bullseye
 
 on:
   pull_request:

@@ -1,5 +1,5 @@
 ---
-name: redis, 6.0-alpine
+name: build-push, 6.0-alpine
 
 on:
   pull_request:
