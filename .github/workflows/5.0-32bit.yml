@@ -1,5 +1,5 @@
 ---
-name: build-push, 32bit-bullseye
+name: build-push, 5-32bit-bullseye
 
 on:
   pull_request:
