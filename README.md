@@ -4,7 +4,7 @@
 |-------|------------|
 | 5.0 | [![redis, 5.0-bullseye](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml) |
 | 5.0-alpine | [![redis, 5.0-alpine](https://github.com/buluma/redis/actions/workflows/5.0-alpine.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-alpine.yml) |
-| 5.0-32bit | [![redis, 5.0-bullseye](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-bullseye.yml) |
+| 5.0-32bit | [![build-push, 32bit-bullseye](https://github.com/buluma/redis/actions/workflows/5.0-32bit.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/5.0-32bit.yml) |
 | 6.0-bulleseye | [![redis, 6.0-bullseye](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/6.0-bullseye.yml) |
 | 6.0-alpine | [![redis, 6.0-alpine](https://github.com/buluma/redis/actions/workflows/6.0-alpine.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/6.0-alpine.yml) |
 | 6.2-bullseye | [![redis, 6.2-bullseye](https://github.com/buluma/redis/actions/workflows/bullseye.yml/badge.svg)](https://github.com/buluma/redis/actions/workflows/bullseye.yml) |
