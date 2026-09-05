@@ -15,7 +15,7 @@ jobs:
   # Test the image builds and works correctly.
   test:
     name: Test
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/testing'
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/testing' || github.ref == 'refs/heads/main'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -29,7 +29,7 @@ jobs:
 
       - name: Run the built image.
         run: |
-          docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro redis-bullseye
+          docker run --name test-container -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro redis-bullseye
           for _ in $(seq 1 30); do
             docker exec test-container redis-cli ping && exit 0
             sleep 1
@@ -41,8 +41,10 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    # needs: test
-    if: github.ref == 'refs/heads/testing' || github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    needs: test
+    if: always() && (needs.test.result == 'success' || github.ref == 'refs/heads/main')
 
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
