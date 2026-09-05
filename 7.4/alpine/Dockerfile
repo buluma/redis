@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.23
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN addgroup -S -g 1000 redis && adduser -S -G redis -u 999 redis
@@ -10,9 +10,9 @@ RUN apk add --no-cache \
 # add tzdata for https://github.com/docker-library/redis/issues/138
 		tzdata
 
-ENV REDIS_VERSION 7.0-rc1
-ENV REDIS_DOWNLOAD_URL https://github.com/redis/redis/archive/7.0-rc1.tar.gz
-ENV REDIS_DOWNLOAD_SHA 0c1132689922b2ba9ca0f6cd4858f31d66de768afdeee2a40427bcdbeab7b849
+ENV REDIS_VERSION 7.4.11
+ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-7.4.11.tar.gz
+ENV REDIS_DOWNLOAD_SHA 3c266ece0abd54ed3b1c912c6eb86b7508cf382cb690ee6649d3843f018f6357
 
 RUN set -eux; \
 	\

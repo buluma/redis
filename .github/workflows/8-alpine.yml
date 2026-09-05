@@ -1,12 +1,12 @@
 ---
-name: build-push, 6.0-alpine
+name: build-push, 8-alpine
 
 on:
   pull_request:
   push:
     paths:
-      - '6.0/alpine/**'
-      - '.github/workflows/6.0-alpine.yml'
+      - '8/alpine/**'
+      - '.github/workflows/8-alpine.yml'
   schedule:
     - cron: '22 10 * * *'
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Test building image.
-        run: cd 6.0 && cd alpine && docker build -t redis-bullseye .
+        run: cd 8 && cd alpine && docker build -t redis-bullseye .
 
       - name: Run the built image.
         run: |
@@ -60,12 +60,12 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25
         with:
-          context: 6.0/alpine/
-          file: 6.0/alpine/Dockerfile
+          context: 8/alpine/
+          file: 8/alpine/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-                ${{ github.repository }}:6.0.16-alpine,
-                ${{ github.repository }}:6.0-alpine,
-                ${{ github.repository }}:6.0.16-alpine3.23,
-                ${{ github.repository }}:6.0-alpine3.23
+                ${{ github.repository }}:8.10.1-alpine,
+                ${{ github.repository }}:8-alpine,
+                ${{ github.repository }}:8.10.1-alpine3.23,
+                ${{ github.repository }}:8-alpine3.23
