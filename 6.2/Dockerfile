@@ -1,11 +1,11 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis
 
 # grab gosu for easy step-down from root
 # https://github.com/tianon/gosu/releases
-ENV GOSU_VERSION 1.12
+ENV GOSU_VERSION 1.17
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
@@ -26,9 +26,9 @@ RUN set -eux; \
 	gosu --version; \
 	gosu nobody true
 
-ENV REDIS_VERSION 6.2.6
-ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-6.2.6.tar.gz
-ENV REDIS_DOWNLOAD_SHA 5b2b8b7a50111ef395bf1c1d5be11e6e167ac018125055daa8b5c2317ae131ab
+ENV REDIS_VERSION 6.2.24
+ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-6.2.24.tar.gz
+ENV REDIS_DOWNLOAD_SHA c3f112749c7cb108597713469cc9beed305e91f036fba313ce8dcbad829f58
 
 RUN set -eux; \
 	\

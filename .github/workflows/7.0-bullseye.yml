@@ -1,11 +1,11 @@
 ---
-name: build-push, 7.0-rc-bullseye
+name: build-push, 7.0-bullseye
 
 on:
   pull_request:
   push:
     paths:
-      - '7.0-rc/**'
+      - '7.0/**'
       - '.github/workflows/7.0-bullseye.yml'
   schedule:
     - cron: '22 10 * * *'
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: cd 7.0-rc && docker build -t redis-bullseye .
+        run: cd 7.0 && docker build -t redis-bullseye .
 
       - name: Run the built image.
         run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro redis-bullseye
@@ -51,9 +51,12 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v2
         with:
-          context: 7.0-rc/
-          file: 7.0-rc/Dockerfile
+          context: 7.0/
+          file: 7.0/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ github.repository }}:7.0-rc1, ${{ github.repository }}:7.0-rc, ${{ github.repository }}:7.0-rc1-bullseye, ${{ github.repository }}:7.0-rc-bullseye
+                ${{ github.repository }}:7.0,
+                ${{ github.repository }}:7.0.15,
+                ${{ github.repository }}:7.0-bullseye,
+                ${{ github.repository }}:7.0.15-bullseye

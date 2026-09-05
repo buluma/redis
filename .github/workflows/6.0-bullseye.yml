@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: cd 6.2 && docker build -t redis-bullseye .
+        run: cd 6.0 && docker build -t redis-bullseye .
 
       - name: Run the built image.
         run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro redis-bullseye
@@ -56,4 +56,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ github.repository }}:6.0-bullseye, ${{ github.repository }}:6.0.16,  ${{ github.repository }}:6.0
+                ${{ github.repository }}:6.0-bullseye,
+                ${{ github.repository }}:6.0.16,
+                ${{ github.repository }}:6.0

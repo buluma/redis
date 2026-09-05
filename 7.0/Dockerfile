@@ -1,12 +1,11 @@
-FROM debian:bullseye-slim
-# TODO: Add labels
+FROM debian:bookworm-slim
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis
 
 # grab gosu for easy step-down from root
 # https://github.com/tianon/gosu/releases
-ENV GOSU_VERSION 1.12
+ENV GOSU_VERSION 1.17
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
@@ -27,9 +26,9 @@ RUN set -eux; \
 	gosu --version; \
 	gosu nobody true
 
-ENV REDIS_VERSION 5.0.14
-ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-5.0.14.tar.gz
-ENV REDIS_DOWNLOAD_SHA 3ea5024766d983249e80d4aa9457c897a9f079957d0fb1f35682df233f997f32
+ENV REDIS_VERSION 7.0.15
+ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-7.0.15.tar.gz
+ENV REDIS_DOWNLOAD_SHA 98066f5363504b26c34dd20fbcc3c957990d764cdf42576c836fc021073f4341
 
 RUN set -eux; \
 	\
@@ -42,6 +41,7 @@ RUN set -eux; \
 		dpkg-dev \
 		gcc \
 		libc6-dev \
+		libssl-dev \
 		make \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
@@ -55,9 +55,9 @@ RUN set -eux; \
 # disable Redis protected mode [1] as it is unnecessary in context of Docker
 # (ports are not automatically exposed when running inside Docker, but rather explicitly by specifying -p / -P)
 # [1]: https://github.com/redis/redis/commit/edd4d555df57dc84265fdfb4ef59a4678832f6da
-	grep -q '^#define CONFIG_DEFAULT_PROTECTED_MODE 1$' /usr/src/redis/src/server.h; \
-	sed -ri 's!^(#define CONFIG_DEFAULT_PROTECTED_MODE) 1$!\1 0!' /usr/src/redis/src/server.h; \
-	grep -q '^#define CONFIG_DEFAULT_PROTECTED_MODE 0$' /usr/src/redis/src/server.h; \
+	grep -E '^ *createBoolConfig[(]"protected-mode",.*, *1 *,.*[)],$' /usr/src/redis/src/config.c; \
+	sed -ri 's!^( *createBoolConfig[(]"protected-mode",.*, *)1( *,.*[)],)$!\10\2!' /usr/src/redis/src/config.c; \
+	grep -E '^ *createBoolConfig[(]"protected-mode",.*, *0 *,.*[)],$' /usr/src/redis/src/config.c; \
 # for future reference, we modify this directly in the source instead of just supplying a default configuration flag because apparently "if you specify any argument to redis-server, [it assumes] you are going to specify everything"
 # see also https://github.com/docker-library/redis/issues/4#issuecomment-50780840
 # (more exactly, this makes sure the default behavior of "save on SIGTERM" stays functional by default)
@@ -77,6 +77,7 @@ RUN set -eux; \
 	sed -ri 's!cd jemalloc && ./configure !&'"$extraJemallocConfigureFlags"' !' /usr/src/redis/deps/Makefile; \
 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/redis/deps/Makefile; \
 	\
+	export BUILD_TLS=yes; \
 	make -C /usr/src/redis -j "$(nproc)" all; \
 	make -C /usr/src/redis install; \
 	\
