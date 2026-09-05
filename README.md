@@ -35,7 +35,7 @@
 - [`7.2.16-alpine`, `7.2-alpine`, `7.2.16-alpine3.23`, `7.2-alpine3.23`](https://github.com/buluma/redis/blob/main/7.2/alpine/Dockerfile)
 - [`7.0.15`, `7.0`, `7.0-bullseye`, `7.0.15-bullseye`](https://github.com/buluma/redis/blob/main/7.0/Dockerfile)
 - [`7.0.15-alpine`, `7.0-alpine`, `7.0.15-alpine3.23`, `7.0-alpine3.23`](https://github.com/buluma/redis/blob/main/7.0/alpine/Dockerfile)
-- [`6.2.24`, `6.2`, `6`, `latest`, `6.2.24-bullseye`, `6.2-bullseye`, `6-bullseye`, `bullseye`](https://github.com/buluma/redis/blob/main/6.2/Dockerfile)
+- [`6.2.24`, `6.2`, `6`, `6.2.24-bullseye`, `6.2-bullseye`, `6-bullseye`, `bullseye`](https://github.com/buluma/redis/blob/main/6.2/Dockerfile)
 - [`6.2.24-alpine`, `6.2-alpine`, `6-alpine`, `alpine`, `6.2.24-alpine3.23`, `6.2-alpine3.23`, `6-alpine3.23`, `alpine3.23`](https://github.com/buluma/redis/blob/main/6.2/alpine/Dockerfile)
 - [`6.0.16`, `6.0`, `6.0.16-bullseye`, `6.0-bullseye`](https://github.com/buluma/redis/blob/main/6.0/Dockerfile)
 - [`6.0.16-alpine`, `6.0-alpine`, `6.0.16-alpine3.23`, `6.0-alpine3.23`](https://github.com/buluma/redis/blob/main/6.0/alpine/Dockerfile)
@@ -48,10 +48,7 @@
 - **Supported architectures**:
   ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))\
   [`amd64`](https://hub.docker.com/r/amd64/redis/),
-  [`arm64v8`](https://hub.docker.com/r/arm64v8/redis/),
-  [`i386`](https://hub.docker.com/r/i386/redis/),
-  [`ppc64le`](https://hub.docker.com/r/ppc64le/redis/),
-  [`s390x`](https://hub.docker.com/r/s390x/redis/)
+  [`arm64v8`](https://hub.docker.com/r/arm64v8/redis/)
 
 - **Published image artifact details**:\
   [repo-info repo's `repos/redis/` directory](https://github.com/docker-library/repo-info/blob/master/repos/redis)
@@ -126,7 +123,7 @@ $ docker run -it --network some-network --rm buluma/redis redis-cli -h some-redi
 ## Additionally, If you want to use your own redis.conf ...
 
 You can create your own Dockerfile that adds a redis.conf from the context into
-/data/, like so.
+/usr/local/etc/redis/redis.conf, like so.
 
 ```dockerfile
 FROM buluma/redis
