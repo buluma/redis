@@ -22,7 +22,7 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af67726
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Test building image.
         run: cd 8 && docker build -t redis-bullseye .
@@ -45,18 +45,18 @@ jobs:
     if: github.ref == 'refs/heads/testing' || github.ref == 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af67726
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: docker/setup-qemu-action@1f40c72289eff860ee54a304f1438e3cff362e0a
       - uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e
 
       - name: Login to DockerHub
-        - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push image.
-        - uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25
+        uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25
         with:
           context: 8/
           file: 8/Dockerfile
