@@ -78,26 +78,14 @@ RUN set -eux; \
 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/redis/deps/Makefile; \
 	\
 	export BUILD_TLS=yes; \
-	make -C /usr/src/redis -j "$(nproc)" all; \
-	make -C /usr/src/redis install; \
-	\
-# TODO https://github.com/redis/redis/pull/3494 (deduplicate "redis-server" copies)
-	serverMd5="$(md5sum /usr/local/bin/redis-server | cut -d' ' -f1)"; export serverMd5; \
-	find /usr/local/bin/redis* -maxdepth 0 \
-		-type f -not -name redis-server \
-		-exec sh -eux -c ' \
-			md5="$(md5sum "$1" | cut -d" " -f1)"; \
-			test "$md5" = "$serverMd5"; \
-		' -- '{}' ';' \
-		-exec ln -svfT 'redis-server' '{}' ';' \
-	; \
+	make -C /usr/src/redis -j "$(nproc)" install; \
 	\
 	rm -r /usr/src/redis; \
 	\
 	apt-mark auto '.*' > /dev/null; \
 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; \
 	find /usr/local -type f -executable -exec ldd '{}' ';' \
-		| awk '/=>/ { print $(NF-1) }' \
+		| awk '/=>/ { so = $(NF-1); if (index(so, "/usr/local/") == 1) next; gsub("^/(usr/)?", "", so); printf "*%s\n", so }' \
 		| sort -u \
 		| xargs -r dpkg-query --search \
 		| cut -d: -f1 \
